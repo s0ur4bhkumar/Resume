@@ -1,18 +1,19 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: 1px solid red;
+    /*border: 1px solid red;*/
 }
 
 #root {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
     display: flex;
     gap: 0.5rem;
     min-height: 80vh;
+    border: 1px solid blue;
 }
 
 html,
@@ -32,8 +33,9 @@ body {
     max-height: 80vh;
 }
 
-.forms{
+.forms {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
+

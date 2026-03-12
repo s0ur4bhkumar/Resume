@@ -1,0 +1,6 @@
+.mainContainer{
+    width: 100%;
+    display: flex;
+    border: 1px solid;
+    gap: 12px;
+}
