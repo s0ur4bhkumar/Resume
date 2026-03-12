@@ -16,7 +16,11 @@ export default function Result() {
     University: "",
     Degree: "",
     CGPA: "",
-    experience: "",
+    Role: "",
+    Employer: "",
+    startDate: "",
+    endDate: "",
+    Achievements: "",
   });
   function onChange(e) {
     const { name, value } = e.target;
