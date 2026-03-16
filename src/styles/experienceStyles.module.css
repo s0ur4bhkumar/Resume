@@ -1,0 +1,51 @@
+:root {
+    --background: #202030;
+    --padding: 1em;
+    --border_radius: 12px;
+    --gap: 12px;
+}
+
+.inputContainer {
+    display: flex;
+}
+
+.inputContainer > label {
+    display: inline-block;
+    width: 120px;
+    text-align: left;
+}
+
+.Experience > form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    padding: var(--padding);
+    border: 1px solid red;
+    background-color: var(--background);
+    border-radius: var(--border_radius);
+}
+
+.experienceSubmitCard {
+    padding: var(--padding);
+    border: 1px solid gray;
+    border-radius: var(--border_radius);
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.experienceSubmitInfo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.jobTitle,
+.Employer,
+.startDate,
+.endDate,
+.Achievements {
+    display: flex;
+    gap: calc(var(--gap) + 12px);
+}

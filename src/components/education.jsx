@@ -1,11 +1,39 @@
-import "../styles/educationStyles.css";
-import { Link } from "react-router-dom";
-import Experience from "./experience";
-export default function Education({ formData, onchange }) {
+import styles from "../styles/educationStyles.module.css";
+import { useState } from "react";
+function EducationSubmitTemplate({ formData, handleSubmit }) {
   return (
-    <div className="Education">
-      <form>
-        <div className="inputContainer">
+    <div className={styles.educationSubmitCard}>
+      <div className={styles.educationSubmitInfo}>
+        <div className={styles.University}>
+          <p>University</p>
+          <span>{formData.University}</span>
+        </div>
+        <div className={styles.Degree}>
+          <p>Degree</p>
+          <span>{formData.Degree}</span>
+        </div>
+        <div className={styles.CGPA}>
+          <p>CGPA</p>
+          <span>{formData.CGPA}</span>
+        </div>
+      </div>
+      <button onClick={handleSubmit}>Edit</button>
+    </div>
+  );
+}
+
+export default function Education({ formData, onchange }) {
+  const [submit, setSubmit] = useState(false);
+  function handleSubmit(e) {
+    e.preventDefault();
+    return setSubmit(!submit);
+  }
+  return submit ? (
+    <EducationSubmitTemplate formData={formData} handleSubmit={handleSubmit} />
+  ) : (
+    <div className={styles.Education}>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <div className={styles.inputContainer}>
           <label htmlFor="University">University:</label>
           <input
             type="text"
@@ -15,7 +43,7 @@ export default function Education({ formData, onchange }) {
             onChange={onchange}
           />
         </div>
-        <div className="inputContainer">
+        <div className={styles.inputContainer}>
           <label htmlFor="Degree">Degree:</label>
           <input
             type="text"
@@ -25,7 +53,7 @@ export default function Education({ formData, onchange }) {
             onChange={onchange}
           />
         </div>
-        <div className="inputContainer">
+        <div className={styles.inputContainer}>
           <label htmlFor="CGPA">CGPA:</label>
           <input
             type="number"
@@ -35,13 +63,8 @@ export default function Education({ formData, onchange }) {
             onChange={onchange}
           />
         </div>
+        <button type="submit">submit</button>
       </form>
-      <Link to={"/"}>
-        <button>prev</button>
-      </Link>
-      <Link to={"/Experience"}>
-        <button>next</button>
-      </Link>
     </div>
   );
 }

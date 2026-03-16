@@ -1,4 +1,4 @@
-import "../styles/result.css";
+import styles from "../styles/result.module.css";
 import General from "./generalInfo";
 import Education from "./education";
 import Experience from "./experience";
@@ -32,23 +32,12 @@ export default function Result() {
     }));
   }
   return (
-    <div className="mainContainer">
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path="/"
-            element={<General formData={formData} onchange={onChange} />}
-          />
-          <Route
-            path="/Education"
-            element={<Education formData={formData} onchange={onChange} />}
-          />
-          <Route
-            path="/Experience"
-            element={<Experience formData={formData} onchange={onChange} />}
-          />
-        </Routes>
-      </BrowserRouter>
+    <div className={styles.mainContainer}>
+      <div className={styles.formContainer}>
+        <General formData={formData} onchange={onChange} />
+        <Education formData={formData} onchange={onChange} />
+        <Experience formData={formData} onchange={onChange} />
+      </div>
       <FinalResume formData={formData} />
     </div>
   );

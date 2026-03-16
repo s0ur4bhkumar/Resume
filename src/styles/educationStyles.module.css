@@ -1,0 +1,57 @@
+:root {
+    --backgroudn: #202030;
+    --border_radius: 12px;
+    --gap: 12px;
+}
+.Education {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    gap: var(--gap);
+    background-color: var(--background);
+    border-radius: var(--border_radius);
+}
+
+.Education form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.inputContainer {
+    display: flex;
+}
+
+.inputContainer > label {
+    display: inline-block;
+    width: 100px;
+    text-align: left;
+}
+button {
+    width: 75px;
+    margin: auto;
+}
+
+.educationSubmitCard {
+    padding: 1em;
+    background-color: var(--background);
+    border: 1px solid grey;
+    border-radius: var(--border_radius);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.University,
+.Degree,
+.CGPA {
+    display: flex;
+    gap: var(--gap);
+}
+
+.educationSubmitInfo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
